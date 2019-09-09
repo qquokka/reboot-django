@@ -46,4 +46,4 @@ def update(request, article_pk):
     article.title = request.POST.get('title')
     article.content = request.POST.get('content')
     article.save()
-    return redirect('/articles/')
+    return redirect(f'/articles/{article.pk}/')
