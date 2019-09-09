@@ -26,10 +26,12 @@ Static 폴더를 처음 만들었을 땐 static 안에 있는 파일들을 html�
 
 Model명은 무조건 단수로 해야 함! 예를 들어, Articles -> Article
 
-다른 사람 코드 볼 때 :
+다른 사람 코드 고칠 때 :
 
 1. 다른사람 리포에서 내 리포로 Fork
 2. Fork한 저장소를 clone하기
 3. 직접 코드 수정
    * add, commit
 4. fork한 저장소로 push
+
+5. 내 github에서 fork된 리포로 들어가서 pull request 보내기
