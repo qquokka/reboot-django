@@ -1,0 +1,28 @@
+{% extends 'articles/base.html' %}
+
+{% block body %}
+<header class="my-5 text-center">
+    <h1>게시글 작성하기</h1>
+  </header>
+<form action="/articles/{{ article.pk }}/update/" method="POST">
+{% csrf_token %}
+  <div class="form-group row">
+  <label for="title" class="col-2 col-lg-1 col-form-label">
+    <p>제목</p>
+  </label>
+  <input type="text" id="title" name="title" class="col-9 col-lg-11" value="{{ article.title }}">
+</div>
+<div class="form-group row">
+  <label for="content" class="col-2 col-lg-1 col-form-label">
+    <p>내용</p>
+  </label>
+  <textarea name="content" id="content" rows="10" class="col-9 col-lg-11 py-3">{{ article.content }}</textarea><br>
+</div>
+<div class="from-group">
+<div class="float-right mr-5">
+  <a href="/articles/"><button type="button" class="btn btn-outline-primary">돌아가기</button></a>
+  <button type="submit" class="btn btn-outline-warning">수정하기</button>
+</div>
+</div>
+</form>
+{% endblock %}

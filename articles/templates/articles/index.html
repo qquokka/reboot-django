@@ -1,12 +1,33 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  <h1>안녕!</h1>
-</body>
-</html>
+{% extends 'articles/base.html' %}
+
+{% block body %}
+<header>
+  <h1 class="text-center my-5">자유게시판</h1>
+</header>
+<a href="/articles/new/"><button type="button" class="btn btn-block btn-outline-warning">작성하기</button></a>
+<table class="table table-hover my-0">
+  <thead>
+    <tr class="thead-warning">
+      <th scope="col">#</th>
+      <th scope="col">제목</th>
+      <th scope="col">작성일</th>
+      <th scope="col">수정일</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for article in articles %}
+    <tr>
+      <th scope="row"><a href="/articles/{{ article.pk }}/">{{ article.pk }}</a></th>
+      <td><a href="/articles/{{ article.pk }}/">{{ article.title }}</a></td>
+      <td>{{ article.created_at }}</td>
+      <td>{{ article.updated_at }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+      <th scope="row" colspan="4">게시물이 없습니다.</th>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<a href="/articles/new/"><button type="button" class="btn btn-block btn-outline-warning">작성하기</button></a>
+{% endblock %}

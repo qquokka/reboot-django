@@ -1,0 +1,39 @@
+{% extends 'articles/base.html' %}
+
+{% block body %}
+<header class="mt-5">
+  <h1>{{ article.title }}</h1>
+  <p class="float-left">{{ article.pk }}번째 글</p>
+  <p class="text-right">작성 : {{ article.created_at }} / 수정 : {{article.updated_at }}</p>
+  <hr>
+</header>
+<p class="my-5">{{ article.content }}</p>
+<div class="float-right">
+    <a href="/articles/"><button type="button" class="btn btn-outline-primary">돌아가기</button></a>
+    <a href="/articles/{{ article.pk }}/edit/"><button type="button" href="/articles/{{ article.pk }}/edit/" class="btn btn-outline-warning">수정하기</button></a>
+    
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteModal">삭제하기</button>    
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">삭제</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        삭제하시겠습니까?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">취소하기</button>
+        <a href="/articles/{{ article.pk }}/delete/"><button type="button" class="btn btn-outline-danger">삭제하기</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

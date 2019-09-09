@@ -1,0 +1,24 @@
+a:hover {
+  text-decoration: none;
+}
+
+header h1, .modal-title {
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+table, p, .modal-body, input, textarea {
+  font-family: 'Noto Serif KR', serif;
+}
+
+button {
+  font-family: 'Yeon Sung', cursive;
+  font-size: 1.2em;
+}
+
+textarea, #title {
+  width: 80vw;
+}
+
+thead {
+  background-color: rgb(255, 175, 155);
+}
