@@ -2,7 +2,7 @@
 
 {% block body %}
 <header class="my-5 text-center">
-    <h1>게시글 작성하기</h1>
+    <h1>게시글 수정하기</h1>
   </header>
 <form action="/articles/{{ article.pk }}/update/" method="POST">
 {% csrf_token %}
