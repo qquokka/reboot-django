@@ -18,7 +18,7 @@ def create(request):
     article.title = request.POST.get('title')
     article.content = request.POST.get('content')
     article.save()
-    return redirect('/articles/')
+    return redirect(f'/articles/{article.pk}')
 
 
 def detail(request, article_pk):

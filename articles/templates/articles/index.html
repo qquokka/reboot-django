@@ -17,14 +17,14 @@
   <tbody>
     {% for article in articles %}
     <tr>
-      <th scope="row"><a href="/articles/{{ article.pk }}/">{{ article.pk }}</a></th>
+      <th scope="row"><a href="/articles/{{ article.pk }}/" class="text-bold">{{ article.pk }}</a></th>
       <td><a href="/articles/{{ article.pk }}/">{{ article.title }}</a></td>
       <td>{{ article.created_at }}</td>
       <td>{{ article.updated_at }}</td>
     </tr>
     {% empty %}
     <tr>
-      <th scope="row" colspan="4">게시물이 없습니다.</th>
+      <th scope="row" colspan="4" class=text-center>게시물이 없습니다.</th>
     </tr>
     {% endfor %}
   </tbody>

@@ -22,3 +22,7 @@ textarea, #title {
 thead {
   background-color: rgb(255, 175, 155);
 }
+
+table {
+  text-align: center;
+}
