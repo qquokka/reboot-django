@@ -60,3 +60,44 @@ html은 태그나 속성 등에 대해 대소문자 구분을 하지 않지만 v
 GET으로 요청 보낼 때 url 맨 뒤에 `/`를 안 붙여도 Django가 알아서 `/` 붙여서 보내줌. 그래서 요청을 두 번 보내게 됨!
 
 POST는 `/` 붙이는 걸 못 해줌
+
+
+
+DB를 만들면 그 table의 이름은 `<app_name>_<model_name>`으로 지정됨. 예를 들어 `JobinthePastLife_PastLife`
+
+
+
+get으로 object를 탐색할 때 그 object가 없거나 해당하는 개수가 많으면 오류 메세지를 띄우게 됨... 그러다보니 uniqueness가 보장되는 primary key에만 쓰는거. primary key 말고는 filter를 써야 함!
+
+
+
+pip 지울 때
+
+```bash
+$ pip uninstall __package_nam__
+```
+
+
+
+## 환경 변수 분리하기
+
+1. `python-decouple` package 설치
+
+   ```bash
+   $ pip install python-decouple
+   ```
+
+2. project 파일 안에 `.env` 파일 만들고 그 안에 다음과 같이 작성
+
+   ```
+   GIPHY_API_KEY='~~api key 작성~~'
+   ```
+
+3. `views.py` 안에 다음과 같이 작성
+
+   ```python
+   from decouple import config
+   
+   api_key = config('GIPHY_API_KEY')
+   ```
+

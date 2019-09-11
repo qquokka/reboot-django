@@ -1,0 +1,10 @@
+{% extends 'JobinthePastLife/base.html' %}
+
+{% block body %}
+<h2>{{ person.name }}님의 전생의 직업은</h2>
+<h1>{{ person.job }}</h1>
+<img src="{{ image_url }}"><br>
+<a href="{% url 'JobinthePastLife:index' %}">
+  <button>돌아가기</button>
+</a>
+{% endblock %}
