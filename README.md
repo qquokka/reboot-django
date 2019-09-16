@@ -101,3 +101,62 @@ $ pip uninstall __package_nam__
    api_key = config('GIPHY_API_KEY')
    ```
 
+
+
+`$ python manage.py shell` 이걸로 대화형 인터프리터? 켤 수 있음
+
+```bash
+$ python manage.py shell
+Python 3.7.4 (tags/v3.7.4:e09359112e, Jul  8 2019, 20:34:20) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>>
+```
+
+나가고 싶으면 `exit() + enter`
+
+`$ pip install ipython` 이걸 설치하면 shell 쓸 때 좀 더 편함!
+
+`$ python manage.py shell` ipython 설치 후 shell 실행하기
+
+```bash
+$ python manage.py shell
+Python 3.7.4 (tags/v3.7.4:e09359112e, Jul  8 2019, 20:34:20) [MSC v.1916 64 bit (AMD64)]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.8.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]:      
+```
+
+나가고 싶으면 `ctrl + D`
+
+`$ pip install django_extensions` 이걸 설치하면 class 같은 거 import 하나하나 안 해도 됨
+
+settings.py에서 `INSTALLED_APPS`에 `django_extensions` 추가하기
+
+`$ python manage.py shell_plus` shell 실행하기!
+
+```bash
+$ python manage.py shell_plus
+# Shell Plus Model Imports
+from JobinthePastLife.models import PastLife
+from articles.models import Article, Comment, Reporter
+from django.contrib.admin.models import LogEntry
+from django.contrib.auth.models import Group, Permission, User
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.sessions.models import Session
+# Shell Plus Django Imports
+from django.core.cache import cache
+from django.conf import settings
+from django.contrib.auth import get_user_model
+from django.db import transaction
+from django.db.models import Avg, Case, Count, F, Max, Min, Prefetch, Q, Sum, When, Exists, OuterRef, Subquery
+from django.utils import timezone
+from django.urls import reverse
+Python 3.7.4 (tags/v3.7.4:e09359112e, Jul  8 2019, 20:34:20) [MSC v.1916 64 bit (AMD64)]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.8.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: 
+```
+
