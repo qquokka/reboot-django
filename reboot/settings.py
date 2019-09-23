@@ -120,3 +120,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# MEDIA_ROOT : 실제 미디어 파일이 저장되는 경로
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # 라는 폴더를 통해서 관리
+# MEDIA_URL : 업로드된 image의 url 주소(물리적인 주소가 아님..????)
+MEDIA_URL = '/media/' # 라는 url로 보여줄 수 있도록 할 거임
