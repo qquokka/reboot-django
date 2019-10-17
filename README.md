@@ -115,7 +115,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 나가고 싶으면 `exit() + enter`
 
-`$ pip install ipython` 이걸 설치하면 shell 쓸 때 좀 더 편함!
+`$ pip install IPython` 이걸 설치하면 shell 쓸 때 좀 더 편함!
 
 `$ python manage.py shell` ipython 설치 후 shell 실행하기
 
